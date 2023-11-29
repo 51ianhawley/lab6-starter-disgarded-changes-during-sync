@@ -19,7 +19,7 @@ public partial class BusinessLogic : IBusinessLogic, INotifyPropertyChanged
     const int GOLD_LEVEL = 128;
 
 
-    IDatabase db;
+    readonly IDatabase db;
     private readonly int MAX_RATING = 5;
    
 
@@ -170,6 +170,15 @@ public partial class BusinessLogic : IBusinessLogic, INotifyPropertyChanged
     public ObservableCollection<Airport> GetAirports()
     {
         return db.SelectAllAirports();
+    }
+
+/// <summary>
+/// Gets all of the airport pins from the database
+/// </summary>
+/// <returns>an observable collection of airport pins</returns>
+    public ObservableCollection<AirportPin> GetAirportPins()
+    {
+        return db.GenerateAllAirportPins();
     }
 
     public ObservableCollection<Resource> GetResources()

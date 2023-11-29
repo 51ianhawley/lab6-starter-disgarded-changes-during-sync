@@ -14,6 +14,7 @@ public interface IBusinessLogic
 
     ObservableCollection<NearbyAirport> CalculateAllAirportDist(String startAirportId, int distance);
     ObservableCollection<Airport> GetAirports();
+    ObservableCollection<AirportPin> GetAirportPins();
     ObservableCollection<Resource> GetResources();
 
     // RoutingStrategies
